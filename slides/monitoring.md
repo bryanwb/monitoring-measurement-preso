@@ -60,41 +60,37 @@ untangling it</center><br />
 * Graphite
 * Elasticsearch + Kibana
 
+
 largely based on [foodfightshow episode 21](http://foodfightshow.org/2012/07/monitoring-for-n00bs-with-jason-dixon.html)
 
 !SLIDE 
-# Collectd for system metrics
+# Here is what it looks like
 <center>
-<img src="images/collectd-monitoring.svg"></img>
+<img src="images/full_stack.svg"></img>
 </center>
 
+!SLIDE
+# Let There Be Graphs!
 
 !SLIDE
-# Collectd is good
+# But what does it all mean?
 
-* lightweight C daemon
-* monitors continuously, not once every 5 minutes
-* Best for OS-level metrics such as CPU, Disk, Memory, etc. 
 
 !SLIDE
-# What's Graphite?
+# Do you know What this means?
 
-* Time Series Database (Whisper)
-* Rendering Engine 
-* Dashboard (Graphite-Web)
-* data relay and aggregation (Carbon)
-<br />
+
 
 !SLIDE
-# What is a metric?
+# Back to Basics, what is a metric?
 
-* a name
+* a bucket name
 * a value
 * a timestamp, typically the UNIX epoch time
 <br />
 
 <center  style="font-size:2em;">
-stats.haproxy.data_fao_org.request_duration  <span style="color:blue;">330</span>  74857843</center>
+bucket.name  <span style="color:blue;">number</span>  TIMESTAMP</center>
 <br />
 <br />
 <center style="font-size:2em;">
@@ -104,156 +100,98 @@ stats.haproxy.data_fao_org.request_duration  <span style="color:blue;">330</span
 
 <br />
 
+!SLIDE
+# More complex values
+
+* Gauges
+* Counters
+* Timers
 
 !SLIDE
-# JMXTrans
-
-* Is just a connector for transporting JMX data
-* No agent involved
+# Gauges
 
 !SLIDE
-# What about those logs?
-
-<img style="float:right;" src="image/images/logstash.png"></img>
-
-<center  style="font-size:3em;">We don't only care about metrics, we also care about important
-events<br /><br /> Scraping metrics from logs would be nice</center>
+# Counters
 
 !SLIDE
-# Show me the graphic already!
+# Timers
 
-![logstash](images/logstash.svg)
 
 !SLIDE
-# Logstash can more than just ship logs
+# How Statsd does it
 
-* Win
-  * index by field
-  * shape data
-  * add new fields and tags to entries
-  * Elasticsearch backend is awwwes0me
-
-* Con - The agent is not light on resource usage
 
 !SLIDE
-# Logs don't have to be Ugly
-
-![logstash](images/basic-kibana.png)
+# How Collectd does it
 
 !SLIDE
-# We can filter the data
-
-![logstash](images/kibana-select-fields.png)
+# How JMX does it
 
 !SLIDE
-# UNIX Tail in your browser
+# Let's look at that graph again
 
-![logstash](images/kibana-tail.png)
-
-!SLIDE
-# Elasticsearch Rocks
-
-* We can use [Lucene Parser
-  Syntax](https://lucene.apache.org/core/old_versioned_docs/versions/3_5_0/queryparsersyntax.html)
-  to construct queries
-* Watch out though, don't use quotes, the 1st example here works, the
-  second doesn't
-<br />
-<div style="font-size:2em;"><em>> status_code:40* AND request_header_host:*fao_org</em></div>
-<br />
-<br />
-<div  style="font-size:2em;"><em>> status_code:"40*" AND request_header_host:"*fao_org"</em></div>
+explain request latency
 
 !SLIDE
-# But this is not really enough
+# Presentation Matters
 
-<br />
-<br />
-<center style="font-size:4em;"> Ideally, your application should be
-instrumented from the inside
-<br />
-<br />
-No one knows your code better than you
-</center>
+* Filter out distorting values, or find them (MostDeviant, removeAbovePercentile)
+* Check performance after change (timeshift)
+* Understand a trend better by smoothing it (smoothing w/ moving averages, holt-winters)
+
 
 !SLIDE
-# Use the Force, Luke
-
-<br />
-<br />
-<img style="float:right;" src="image/images/luke_skywalker.jpg"></img>
-<br />
-<br />
-<center style="font-size:4em;">Use Statsd</center>
-
-.notes http://www.alexandgregory.com/images/luke%20skywalker.jpg
+# Let's See the Average disk latency
 
 !SLIDE
-# Show me a graphic     
+# Compare it w/ last week
 
-![Statsd](images/statsd.svg)
+timeshift
 
-!SLIDE
-# Enter Statsd
+!SLIDE 
+# Let's look at request latency
 
-* a small local daemon that your application send metrics to over UDP     
-* has virtually no overhead
-* I use [Pete Fritchman's Ruby implementation](https://github.com/fetep/ruby-statsd)
-* Statsd ships the metrics it receives to graphite
-* Types of metrics
-  * gauges
-  * timers
-  * counters
+esb
 
 !SLIDE
-# So about the code
-
-
-<center style="font-size:2em;">Here is some sample java code</center>
-
-![java-client](images/java-client.png)
+# Filter out Worst cases
 
 !SLIDE
-# Metrics, Metrics Everywhere
-
-<img src="images/metrics-hat-full.png"  height="300px"
-width="250px" style="float:right;"></img>
-Coda Hale gave an [excellent talk](http://pivotallabs.com/talks/139-metrics-metrics-everywhere) about how his team at yammer
-uses metrics
-<br /><br />
-He also created an excellent [java library](http://metrics.codahale.com/) that you can use together
-with statsd
+# Show me the n worst cases!
 
 !SLIDE
-# Now, Graphite Demo
+# What's the usage trend?
 
-<img src="images/graphite-graph-example.png"  height="500px"
-width="800px" ></img>
+smoothing
 
-.notes show how to display request_duration across multiple sub_domains
-
-!SLIDE
-
-# You will get for free
-
-* System-level monitoring with collectd
-* JMX monitoring w/ JMXtrans
-* log aggregation on request via logstash+elasticsearch+kibana
-* All those data points in graphite
-
-<br />
-<center style="font-size:4em;">But if you are serious about
-performance . . .</center>
+moving averages
 
 !SLIDE
-# . . . You will
+# moving average
 
-<img src="images/serious_cat.jpg" style="float:right;"></img>
 
-* instrument your code with the statsd java client or Coda
-  Hale's metrics library
-* Create custom graphs in graphite
-* Solve performance problems the way real engineers do, with _data_
+!SLIDE
+# Holt Winters forecast
+
+!SLIDE
+# Confidence Bands
+
+!SLIDE
+# Let's Get Funky
+
+holt-winters aberration and a 2nd y-axis
+
+!SLIDE
+# How confident are you?
+
+!SLIDE
+# More Interesting Graphite Functions
+
+* scale
+* removeAbovePercentile
+* cumulative
+* hitCount
+* . . . [and more](http://graphite.readthedocs.org/en/0.9.10/functions.html)!
 
 !SLIDE
 # Questions?
@@ -261,23 +199,24 @@ performance . . .</center>
 <center style="font-size:4em;">Ask away</center>
 
 !SLIDE
-# The Full Stack
-
-![Full stack](images/full_stack.svg)
-
-!SLIDE
 # Further Resources
 
-* [Logstash](http://logstash.net)
-* [Collectd](http://collectd.org)
-* [statsd](https://github.com/etsy/statsd) and Pete Fritchman's [ruby-statsd](https://github.com/fetep/ruby-statsd)
-* [graphite](http://graphite.wikidot.org)
-* Coda Hale's [excellent talk](http://pivotallabs.com/talks/139-metrics-metrics-everywhere)
-and library [java library](http://metrics.codahale.com/)
-* Be sure to listen to the FoodFightShow! 
+*  [Graphite Functions](http://graphite.readthedocs.org/en/0.9.10/functions.html)
+*  [Holt-Winters Approach to Exponential Smoothing](http://forecasters.org/pdfs/foresight/free/Issue19_goodwin.pdf) by Paul Goodwin 
+* [Pal Kristian Hamre's](http://blog.pkhamre.com) excellent blog
+* [Jason Dixon](http://obfuscurity.com/) of course
+* My Chef recipes for collectd, statsd, logstash, and jmxtrans
+* Be sure to listen to the [FoodFightShow](http://foodfightshow.org) http://foodfightshow.org
    * [Monitoring for n00bs](http://traffic.libsyn.com/foodfight/ffs21_3.mp3)
    * [Monitoringsucks](http://traffic.libsyn.com/foodfight/ffs18_3.mp3)  
 
 <img src="images/foodfight_banner.png" width="500px" height="210px"></img>
 
+!SLIDE
+# Special Thanks to
+
+* Jason Dixon
+* Pal Kristian Hamre
+* Pete Fritchman
+* Matt Leinartas
 
