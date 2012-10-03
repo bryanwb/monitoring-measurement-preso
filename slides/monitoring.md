@@ -17,13 +17,12 @@ image of measure tap plus graph ?
 
 I am Bryan W. Berry
 
-* I am in charge of infrastructure operations for
-[http://data.fao.org](http://data.fao.org), and I am the co-host of
-the [FoodFightShow](http://foodfightshow.org) the bi-weekly Chef
+* I am an operations consultant at the [UN Food and Agriculture Organization](http://www.fao.org) here in Rome. My principle responsibility is to manage infrastructure operations for
+[http://data.fao.org](http://data.fao.org)
+* Also the co-host of the [FoodFightShow](http://foodfightshow.org) the bi-weekly Chef
 community podcast
-* [UN Food and Agriculture Organization](http://data.fao.org) is a UN
-agency base here in Rome. 
-image of FAO logo
+
+image of FAO logo 
 <br />
 You can reach me at bryan.berry@gmail.com
 
@@ -34,6 +33,7 @@ You can reach me at bryan.berry@gmail.com
 * Monitoring Helps
 * But What does it all mean?
 * Measure it, don't just monitor it
+* 
 
 !SLIDE
 # data.fao.org Architecture on Paper 
@@ -80,6 +80,11 @@ largely based on [foodfightshow episode 21](http://foodfightshow.org/2012/07/mon
 # Do you know What this means?
 
 
+!SLIDE
+# How many Requests per second?
+
+!SLIDE
+# How slow is my site?
 
 !SLIDE
 # Back to Basics, what is a metric?
@@ -132,12 +137,20 @@ bucket.name  <span style="color:blue;">number</span>  TIMESTAMP</center>
 
 explain request latency
 
-!SLIDE
-# Presentation Matters
 
-* Filter out distorting values, or find them (MostDeviant, removeAbovePercentile)
-* Check performance after change (timeshift)
-* Understand a trend better by smoothing it (smoothing w/ moving averages, holt-winters)
+
+!SLIDE
+# Useful Operations
+
+* Filter out or find distorting values
+* Check performance after change 
+* Smooth the Savage Graph
+
+
+.notes distorying values MostDeviant, removeAbovePercentile
+.notes timeshift
+.notes  smoothing w/ moving averages, holt-winters
+
 
 
 !SLIDE
@@ -171,7 +184,7 @@ moving averages
 
 
 !SLIDE
-# Holt Winters forecast
+# Holt-Winters forecast
 
 !SLIDE
 # Confidence Bands
@@ -179,10 +192,49 @@ moving averages
 !SLIDE
 # Let's Get Funky
 
-holt-winters aberration and a 2nd y-axis
+Holt-winters aberration and a 2nd y-axis
 
 !SLIDE
 # How confident are you?
+
+
+!SLIDE
+# Presentation matters
+
+* Maximize Data-ink Ratio
+* Maximize data density
+* Use _words_ and colors (to a lesser extent) to add context to your graph
+
+!SLIDE
+# Edward Tufte, Data Vis. Guru
+
+image of Edward Tufte
+
+"Graphics should do more than present the obvious to idiots"
+
+!SLIDE
+# More wisdom
+
+"The task of the designer is to give visual access to the subtle and
+the difficult -- that is, the revelation of the complex"
+
+!SLIDE
+# Drop Unnecessary Grid lines, Maximize Data-ink Ratio
+
+
+
+!SLIDE
+# Colors and Text can Illuminate
+
+<center>
+<img src="images/db_cpu_usage.png"></img>
+</center>
+
+!SLIDE
+# The underrated alias function
+
+.notes any ink that doesn't convey information detracts from the info presented
+.notes http://graphite.data.fao.org/render?_salt=1349170588.995&width=1433&height=584&from=14%3A00_20120821&until=23%3A59_20120821&areaMode=stacked&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-system%2C%22%25%20System%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-user%2C%22%25%20User%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-wait%2C%22%25%20Wait%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-idle%2C%22%25%20Idle%22)&vtitle=Percentage&leftDashed=px&title=Database%20Server%20CPU%20Usage%20from%2014%3A00%20-%2023%3A59%2021%20August%202012
 
 !SLIDE
 # More Interesting Graphite Functions
@@ -202,7 +254,9 @@ holt-winters aberration and a 2nd y-axis
 # Further Resources
 
 *  [Graphite Functions](http://graphite.readthedocs.org/en/0.9.10/functions.html)
-*  [Holt-Winters Approach to Exponential Smoothing](http://forecasters.org/pdfs/foresight/free/Issue19_goodwin.pdf) by Paul Goodwin 
+*  [Holt-Winters Approach to Exponential Smoothing](http://faculty.wiu.edu/F-Dehkordi/DS-533/Lectures/Moving-average-methods.ppt)
+by F. Dekhordi 
+* [The Visual Display of Quantitative Information](http://www.edwardtufte.com/tufte/books_vdqi) by Edward Tufte
 * [Pal Kristian Hamre's](http://blog.pkhamre.com) excellent blog
 * [Jason Dixon](http://obfuscurity.com/) of course
 * My Chef recipes for collectd, statsd, logstash, and jmxtrans
