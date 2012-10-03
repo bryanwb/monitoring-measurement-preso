@@ -18,21 +18,58 @@ bucket.name  <span style="color:blue;">number</span>  TIMESTAMP</center>
 <br />
 
 !SLIDE
-# Metric Types
+# Metric Types for Collectd
 
 * Gauges
+* Derive 
 * Counters
+* Absolute
+
+Gauges are the most commonly used metric type
+
+![counters](counters.svg)
+
+
+!SLIDE
+# Metric Types for Statsd
+
+* Gauges
+* Counters*
 * Timers
+<br /><br />
+Counters* different than counters in collectd
 
 ![counters](counters.svg)
 
 !SLIDE
+# Really Basic
+
+![basic transport](sending_metrics.svg)
+
+!SLIDE
+# collectd in action
+
+![collectd](collectd-monitoring.svg)
+
+!SLIDE
+# statsd in action 
+
+![statsd](statsd.svg)
+
+!SLIDE
 # Gauges
 
+!SLIDE
+# Derive metric type (collectd only)
 
 
 !SLIDE
-# Counters
+# Counters (statsd)
+
+
+!SLIDE
+# Gauges
+
 
 !SLIDE
 # Timers
