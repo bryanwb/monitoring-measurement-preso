@@ -1,53 +1,76 @@
-
 !SLIDE
-# Useful Operations
+# I see spikes, but no trend
 
-* Filter out or find distorting values
-* Check performance after change 
-* Smooth the Savage Graph
-
-
-.notes remove or find distorting values MostDeviant, removeAbovePercentile
-.notes timeshift
-.notes  smoothing w/ moving averages, holt-winters
-
-
-
-!SLIDE
-# Let's See the Average disk latency
-
-!SLIDE
-# Compare it w/ last week
-
-timeshift
+![spikes](images/hit_count_spikes.svg)
 
 !SLIDE 
-# Let's look at request latency
+# Smoothing 
 
-esb
+Massage the Numbers to reveal the trend and to make useful forecasts
 
-!SLIDE
-# Filter out Worst cases
-
-!SLIDE
-# Show me the n worst cases!
+* Moving Average
+* Moving Weighted Averages
+* Holt-Winters
 
 !SLIDE
-# What's the usage trend?
+# Let's Move that Average
 
-smoothing
-
-moving averages
+![moving average](images/hit_count_moving_average.png)
 
 !SLIDE
-# moving average
+# Show me the Math!
 
+<center style="font-size:3em;">
+For value M at time t and N number of points, calculate the average
+based on the last 10 points <br /><br />
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+<msub>M<mn>t</mn></msub> =
+[ <msub>X<mn>t</mn></msub> + <msub>X<mn>t-1</mn></msub> + ... + <msub>X<mn>t-N+1</mn></msub>] / N
+</math>
+
+<br />
+<br />
+</center>
+
+<center style="font-size:3em;">
+Moving Averages are OK at reflecting trend, <br /> but  have no notion of
+<em>seasonality</em>
+</center>
+
+!SLIDE
+# Got Seasonality
 
 !SLIDE
 # Holt-Winters forecast
 
+Let's Factor in:
+* How smooth do we want the data to be, i.e. not spiky
+* Trend
+* Seasonality
+
+!SLIDE
+# Now with Seasoning
+
+!SLIDE
+# Show me the Math!
+
+![holt-winters math](images/holt-winters-bigger.png)
+
+!SLIDE
+# Oh no!
+
+![oh no](images/the-scream.jpg)
+
+
 !SLIDE
 # Confidence Bands
+
+!SLIDE
+# Alerting on HW
+
+* Problems
+* Immense Potential
+* capacity planning
 
 !SLIDE
 # Let's Get Funky
@@ -104,6 +127,14 @@ the difficult -- that is, the revelation of the complex"
 * cumulative
 * hitCount
 * . . . [and more](http://graphite.readthedocs.org/en/0.9.10/functions.html)!
+
+!SLIDE
+# John Rauser's wisdom on logs
+
+!SLIDE
+# The Power of Chef
+
+cookbooks online and available
 
 !SLIDE
 # Questions?

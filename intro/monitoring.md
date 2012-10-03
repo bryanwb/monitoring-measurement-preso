@@ -16,9 +16,10 @@ on the [http://data.fao.org](http://data.fao.org) project
 * Creator and co-host of the
   [Food Fight podcast](http://foodfightshow.org)
 * You can reach me at bryan.berry@gmail.com or @bryanwb
+* I am a novice at statistics, graphs, and monitoring
 <br /><br />
 <div style="float:left;">
-<img src="images/data-fao-org-logo-v8.png"></img> &nbsp; &nbsp;
+<img src="images/data-fao-org-logo-v8-bigger.png"></img> &nbsp; &nbsp;
 <img src="images/foodfight_banner.png" width="250px" height="105px"></img>
 </div>
 
@@ -56,7 +57,7 @@ untangling it</center><br />
 
 * Collectd (cpu, disk, network, arbitrary system data)
 * JMXtrans to poll JMX data
-* Logstash + statsd to gather stats from application logs
+* Logstash + statsd awesome combination
 * Graphite
 * Elasticsearch + Kibana
 
@@ -76,7 +77,6 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 </div>
 ![moar graphs](images/moar_graphs.svg)
 
-
 !SLIDE
 # But what does it all mean?
 
@@ -87,7 +87,9 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 !SLIDE
 # Do you know What this means?
 
-<img src="images/http_requests.png"></img>
+<img src="images/request_latency.png"></img>
+
+Just collecting the data isn't enough
 
 !SLIDE
 # How fast/slow is the site?
