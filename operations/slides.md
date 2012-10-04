@@ -1,7 +1,7 @@
 !SLIDE
 # I see spikes, but no trend
 
-![spikes](hit_count_spikes.svg)
+![spikes](hit_count_spikes.png)
 
 !SLIDE 
 # Smoothing 

@@ -27,7 +27,7 @@ bucket.name  <span style="color:blue;">number</span>  TIMESTAMP</center>
 
 Gauges are the most commonly used metric type
 
-![counters](counters.svg)
+![counters](counters.png)
 
 
 !SLIDE
@@ -39,22 +39,22 @@ Gauges are the most commonly used metric type
 <br /><br />
 Counters* different than counters in collectd
 
-![counters](counters.svg)
+![counters](counters.png)
 
 !SLIDE
 # Really Basic
 
-![basic transport](sending_metrics.svg)
+![basic transport](sending_metrics.png)
 
 !SLIDE
 # collectd in action
 
-![collectd](collectd-monitoring.svg)
+![collectd](collectd-monitoring.png)
 
 !SLIDE
 # statsd in action 
 
-![statsd](statsd.svg)
+![statsd](statsd.png)
 
 !SLIDE
 # Gauges
@@ -121,7 +121,7 @@ simplest type in StatsD and collectd
 !SLIDE
 # Let's take a look that JVM
 
-![jmxtrans](jmxtrans.svg)
+![jmxtrans](jmxtrans.png)
 
 !SLIDE
 # JMXtrans 
@@ -132,7 +132,7 @@ simplest type in StatsD and collectd
 !SLIDE
 # Let's look at that graph again
 
-<img src="request_latency.svg"></img>
+<img src="request_latency.png"></img>
 
 That's horrible!
 
@@ -141,12 +141,12 @@ That's horrible!
 
 * Let's look at that 90th Percentile
 
-<img src="request_90th.svg"></img>
+<img src="request_90th.png"></img>
 
 !SLIDE
 # Let's remove the 90th Percentile
 
-<img src="filtered_mean.svg"></img>
+<img src="filtered_mean.png"></img>
 
 !SLIDE
 # learn it Love it
