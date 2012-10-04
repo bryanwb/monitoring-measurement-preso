@@ -4,7 +4,7 @@
 Measure it, <br />
 Don't Just Monitor It
 </center>
-![alt text](images/preso-front.svg)
+![alt text](images/preso-front1.svg)
 <br />
 Devopsdays Italy 2012, Bryan W. Berry
 

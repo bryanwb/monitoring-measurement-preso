@@ -17,6 +17,10 @@ Massage the Numbers to reveal the trend and to make useful forecasts
 
 ![moving average](images/hit_count_moving_average.png)
 
+<center style="font-size:3em;">
+erm, a little better
+</center>
+
 !SLIDE
 # Show me the Math!
 
@@ -38,18 +42,27 @@ Moving Averages are OK at reflecting trend, <br /> but  have no notion of
 </center>
 
 !SLIDE
-# Got Seasonality
+# Got Seasonality?
+
+![more hw](images/graph-sum.png)
+
+.notes http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/
 
 !SLIDE
 # Holt-Winters forecast
 
 Let's Factor in:
+
 * How smooth do we want the data to be, i.e. not spiky
 * Trend
 * Seasonality
 
 !SLIDE
-# Now with Seasoning
+# Now with Seasoning!
+
+![more hw](images/graph-holtWintersAverage.png)
+
+.notes http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/
 
 !SLIDE
 # Show me the Math!
@@ -59,27 +72,43 @@ Let's Factor in:
 !SLIDE
 # Oh no!
 
-![oh no](images/the-scream.jpg)
+![oh no](images/the-scream-bigger.jpg)
 
+!SLIDE
+# Idiot's guide to Holt Winters
+
+* 4 Equations
+  * Overrall Smoothing
+  * Trend Smoothing
+  * Seasonal Smoothing
+  * Actual Forecast
+* 3 Constants
+  * α - overrall
+  * β - Trend
+  * γ - Seasonality
+
+.notes http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc435.htm
 
 !SLIDE
 # Confidence Bands
 
-!SLIDE
-# Alerting on HW
+![confidence bands](images/basic.png)
 
+.notes https://github.com/ripienaar/graphite-graph-dsl/wiki/Creating-Holt-Winters-Forecasts
+
+!SLIDE
+# Aberration
+
+![aberration](images/basic-with-aberration-on-y.png)
+
+!SLIDE
+# Great potential in Holt-Winters
+
+* Intelligent capacity planning!
+* More intelligent alerting
 * Problems
-* Immense Potential
-* capacity planning
-
-!SLIDE
-# Let's Get Funky
-
-Holt-winters aberration and a 2nd y-axis
-
-!SLIDE
-# How confident are you?
-
+  * Buggy implementation
+  * Need to null outage data
 
 !SLIDE
 # Presentation matters
@@ -89,22 +118,38 @@ Holt-winters aberration and a 2nd y-axis
 * Use _words_ and colors (to a lesser extent) to add context to your graph
 
 !SLIDE
-# Edward Tufte, Data Vis. Guru
+# Edward Tufte, Data Visualization Guru
 
-image of Edward Tufte
+<center>
+<img src="images/photo_tufte.jpeg"></img>
+</center>
 
+<center style="font-size:3em;">
 "Graphics should do more than present the obvious to idiots"
+</center>
 
 !SLIDE
 # More wisdom
 
+<center>
+<img src="images/photo_tufte.jpeg"></img>
+</center>
+
+<center style="font-size:3em;">
 "The task of the designer is to give visual access to the subtle and
 the difficult -- that is, the revelation of the complex"
+</center>
 
 !SLIDE
-# Drop Unnecessary Grid lines, Maximize Data-ink Ratio
+# Maximize Data-ink Ratio
 
+Drop Unnecessary Grid lines 
 
+<center>
+<img src="images/no-grid-lines.svg"></img>
+</center>
+
+Ah, much better!
 
 !SLIDE
 # Colors and Text can Illuminate
@@ -114,27 +159,35 @@ the difficult -- that is, the revelation of the complex"
 </center>
 
 !SLIDE
-# The underrated alias function
-
-.notes any ink that doesn't convey information detracts from the info presented
-.notes http://graphite.data.fao.org/render?_salt=1349170588.995&width=1433&height=584&from=14%3A00_20120821&until=23%3A59_20120821&areaMode=stacked&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-system%2C%22%25%20System%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-user%2C%22%25%20User%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-wait%2C%22%25%20Wait%22)&target=alias(collectd.hqlqatcdrdb1_hq_un_fao_org.cpu-0.cpu-idle%2C%22%25%20Idle%22)&vtitle=Percentage&leftDashed=px&title=Database%20Server%20CPU%20Usage%20from%2014%3A00%20-%2023%3A59%2021%20August%202012
-
-!SLIDE
 # More Interesting Graphite Functions
 
 * scale
 * removeAbovePercentile
 * cumulative
+* summarize
 * hitCount
-* . . . [and more](http://graphite.readthedocs.org/en/0.9.10/functions.html)!
+* . . . [and many more!](http://graphite.readthedocs.org/en/0.9.10/functions.html)!
 
 !SLIDE
-# John Rauser's wisdom on logs
+# John Rauser - Look at Your Data
+
+<iframe title="YouTube video player" width="640" height="410"
+src="http://www.youtube.com/watch?v=coNDCIMH8bk" frameborder="0"
+allowfullscreen>
+</iframe>
+
 
 !SLIDE
 # The Power of Chef
 
-cookbooks online and available
+* I couldn't have put together this stack w/out Chef
+* cookbooks online and available
+  * [collectd](https://github.com/bryanwb/chef-jmxtrans)
+  * [graphite](https://github.com/bryanwb/chef-graphite)
+  * [logstash](https://github.com/bryanwb/chef-logstash)
+  * [ruby-statsd](https://github.com/bryanwb/chef-ruby-statsd)
+* Checkout [monigusto](http://www.youtube.com/embed/oHg5SJYRHA0)!
+
 
 !SLIDE
 # Questions?
