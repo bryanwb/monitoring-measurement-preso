@@ -4,7 +4,7 @@
 Measure it, <br />
 Don't Just Monitor It
 </center>
-![alt text](images/preso-front1.svg)
+![alt text](preso-front1.png)
 <br />
 Devopsdays Italy 2012, Bryan W. Berry
 
@@ -19,14 +19,14 @@ on the [http://data.fao.org](http://data.fao.org) project
 * I am a novice at statistics, graphs, and monitoring
 <br /><br />
 <div style="float:left;">
-<img src="images/data-fao-org-logo-v8-bigger.png"></img> &nbsp; &nbsp;
-<img src="images/foodfight_banner.png" width="250px" height="105px"></img>
+<img src="data-fao-org-logo-v8-bigger.png"></img> &nbsp; &nbsp;
+<img src="foodfight_banner.png" width="250px" height="105px"></img>
 </div>
 
 !SLIDE
 # more on data.fao.org
 
-<img src="images/screenshot01.png" height="480px" width="500px"></img>
+<img src="screenshot01.png" height="480px" width="500px"></img>
 
 !SLIDE 
 # Overview
@@ -40,12 +40,12 @@ on the [http://data.fao.org](http://data.fao.org) project
 !SLIDE
 # data.fao.org Architecture on Paper 
 
-<img src="images/data_fao_org_arch.jpg"></img>
+<img src="data_fao_org_arch.jpg"></img>
 
 !SLIDE
 # data.fao.org Architecture in Reality
 
-<center><img src="images/spaghetti-bolognese.jpg" height="800px" width="600px" /></center>
+<center><img src="spaghetti-bolognese.jpg" height="800px" width="600px" /></center>
 
 <center style="font-size:3em;">systematic monitoring is critical to
 untangling it</center><br />
@@ -67,27 +67,29 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 !SLIDE 
 # Here is what it looks like
 <center>
-<img src="images/full_stack.svg"></img>
+<img src="full_stack.png"></img>
 </center>
 
 !SLIDE
 # Let There Be Graphs!
 <div style="float:left;">
-<img src="images/185px-The_Yes_Guy.png"></img>
+<img src="185px-The_Yes_Guy.png"></img>
 </div>
-![moar graphs](images/moar_graphs.svg)
+![moar graphs](moar_graphs.png)
 
 !SLIDE
 # But what does it all mean?
 
-![dazed and confused](images/confusing_graphs.svg)
+<center>
+<img src="confusing_graphs.png"></img>
+</center>
 
 .notes http://www.buzzlol.com/wp-content/uploads/2012/05/Confused-Dog-Is-Confused.jpg
 
 !SLIDE
 # Do you know What this means?
 
-<img src="images/request_latency.png"></img>
+<img src="request_latency-svg.png"></img>
 
 Just collecting the data isn't enough
 
@@ -99,4 +101,3 @@ Just collecting the data isn't enough
 * What is the average request latency?
 * Is "average" what we really want to know?
 
-Copyright 2012, Bryan W. Berry License: CC-By 3.0

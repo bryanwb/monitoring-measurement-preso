@@ -1,7 +1,7 @@
 !SLIDE
 # I see spikes, but no trend
 
-![spikes](images/hit_count_spikes.svg)
+![spikes](hit_count_spikes.svg)
 
 !SLIDE 
 # Smoothing 
@@ -15,7 +15,7 @@ Massage the Numbers to reveal the trend and to make useful forecasts
 !SLIDE
 # Let's Move that Average
 
-![moving average](images/hit_count_moving_average.png)
+![moving average](hit_count_moving_average.png)
 
 <center style="font-size:3em;">
 erm, a little better
@@ -44,7 +44,7 @@ Moving Averages are OK at reflecting trend, <br /> but  have no notion of
 !SLIDE
 # Got Seasonality?
 
-![more hw](images/graph-sum.png)
+![more hw](graph-sum.png)
 
 .notes http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/
 
@@ -60,19 +60,19 @@ Let's Factor in:
 !SLIDE
 # Now with Seasoning!
 
-![more hw](images/graph-holtWintersAverage.png)
+![more hw](graph-holtWintersAverage.png)
 
 .notes http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/
 
 !SLIDE
 # Show me the Math!
 
-![holt-winters math](images/holt-winters-bigger.png)
+![holt-winters math](holt-winters-bigger.png)
 
 !SLIDE
 # Oh no!
 
-![oh no](images/the-scream-bigger.jpg)
+![oh no](the-scream-bigger.jpg)
 
 !SLIDE
 # Idiot's guide to Holt Winters
@@ -92,14 +92,14 @@ Let's Factor in:
 !SLIDE
 # Confidence Bands
 
-![confidence bands](images/basic.png)
+![confidence bands](basic.png)
 
 .notes https://github.com/ripienaar/graphite-graph-dsl/wiki/Creating-Holt-Winters-Forecasts
 
 !SLIDE
 # Aberration
 
-![aberration](images/basic-with-aberration-on-y.png)
+![aberration](basic-with-aberration-on-y.png)
 
 !SLIDE
 # Great potential in Holt-Winters
@@ -121,7 +121,7 @@ Let's Factor in:
 # Edward Tufte, Data Visualization Guru
 
 <center>
-<img src="images/photo_tufte.jpeg"></img>
+<img src="photo_tufte.jpeg"></img>
 </center>
 
 <center style="font-size:3em;">
@@ -132,7 +132,7 @@ Let's Factor in:
 # More wisdom
 
 <center>
-<img src="images/photo_tufte.jpeg"></img>
+<img src="photo_tufte.jpeg"></img>
 </center>
 
 <center style="font-size:3em;">
@@ -146,7 +146,7 @@ the difficult -- that is, the revelation of the complex"
 Drop Unnecessary Grid lines 
 
 <center>
-<img src="images/no-grid-lines.svg"></img>
+<img src="no-grid-lines.svg"></img>
 </center>
 
 Ah, much better!
@@ -155,7 +155,7 @@ Ah, much better!
 # Colors and Text can Illuminate
 
 <center>
-<img src="images/db_cpu_usage.png"></img>
+<img src="db_cpu_usage.png"></img>
 </center>
 
 !SLIDE
@@ -208,7 +208,7 @@ by F. Dekhordi
    * [Monitoring for n00bs](http://traffic.libsyn.com/foodfight/ffs21_3.mp3)
    * [Monitoringsucks](http://traffic.libsyn.com/foodfight/ffs18_3.mp3)  
 
-<img src="images/foodfight_banner.png" width="500px" height="210px"></img>
+<img src="foodfight_banner.png" width="500px" height="210px"></img>
 
 !SLIDE
 # Special Thanks to
@@ -218,4 +218,7 @@ by F. Dekhordi
 * Pete Fritchman
 * Michael Leinartas
 
-[This presentation](https://github.com/bryanwb/monitoring-measurement-preso) is available on github in showoff format
+[This presentation](https://github.com/bryanwb/monitoring-measurement-preso)
+is available on github in showoff format, and diagrams done in SVG
+
+Copyright 2012, Bryan W. Berry License: CC-By 3.0
