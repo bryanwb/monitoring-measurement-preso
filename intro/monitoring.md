@@ -40,7 +40,7 @@ on the [http://data.fao.org](http://data.fao.org) project
 !SLIDE
 # data.fao.org Architecture on Paper 
 
-show image of architecture
+<img src="images/data_fao_org_arch.jpg"></img>
 
 !SLIDE
 # data.fao.org Architecture in Reality
@@ -99,3 +99,4 @@ Just collecting the data isn't enough
 * What is the average request latency?
 * Is "average" what we really want to know?
 
+Copyright 2012, Bryan W. Berry License: CC-By 3.0
