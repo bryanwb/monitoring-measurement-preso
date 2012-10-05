@@ -40,7 +40,9 @@ on the [http://data.fao.org](http://data.fao.org) project
 !SLIDE
 # data.fao.org Architecture on Paper 
 
+<center>
 <img src="data_fao_org_arch.jpg"></img>
+</center>
 
 !SLIDE
 # data.fao.org Architecture in Reality
@@ -77,9 +79,7 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 </div>
 ![moar graphs](moar_graphs.png)
 
-!SLIDE
-# But what does it all mean?
-
+!SLIDE full-page
 <center>
 <img src="confusing_graphs.png"></img>
 </center>

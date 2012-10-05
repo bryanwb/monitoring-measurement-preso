@@ -61,18 +61,23 @@ Let's Factor in:
 # Now with Seasoning!
 
 ![more hw](graph-holtWintersAverage.png)
+<br />
+Graph credit: Pal Kristian Hamre
+
 
 .notes http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/
 
 !SLIDE
 # Show me the Math!
 
-![holt-winters math](holt-winters-bigger.png)
+<center>
+<img src="holt-winters-bigger.png"></img>
+</center>
 
-!SLIDE
-# Oh no!
-
-![oh no](the-scream-bigger.jpg)
+!SLIDE full-page
+<center>
+<img src="the-scream-bigger.jpg"></img>
+</center>
 
 !SLIDE
 # Idiot's guide to Holt Winters
@@ -93,6 +98,8 @@ Let's Factor in:
 # Confidence Bands
 
 ![confidence bands](basic.png)
+<br />
+Graph credit: R.I. Pienaar
 
 .notes https://github.com/ripienaar/graphite-graph-dsl/wiki/Creating-Holt-Winters-Forecasts
 
@@ -100,6 +107,8 @@ Let's Factor in:
 # Aberration
 
 ![aberration](basic-with-aberration-on-y.png)
+<br />
+Graph credit: R.I. Pienaar
 
 !SLIDE
 # Great potential in Holt-Winters
@@ -146,7 +155,7 @@ the difficult -- that is, the revelation of the complex"
 Drop Unnecessary Grid lines 
 
 <center>
-<img src="no-grid-lines.svg"></img>
+<img src="no-grid-lines.png"></img>
 </center>
 
 Ah, much better!
@@ -168,14 +177,16 @@ Ah, much better!
 * hitCount
 * . . . [and many more!](http://graphite.readthedocs.org/en/0.9.10/functions.html)!
 
-!SLIDE
-# John Rauser - Look at Your Data
+!SLIDE 
+# John Rauser - look at your data
 
-<iframe title="YouTube video player" width="640" height="410"
-src="http://www.youtube.com/watch?v=coNDCIMH8bk" frameborder="0"
-allowfullscreen>
-</iframe>
-
+<center>
+<a href="http://www.youtube.com/watch?v=coNDCIMH8bk">
+<img src="john_rauser.png"></img>
+<br />
+Keep your logs, ideally in elasticsearch
+</a>
+</center>
 
 !SLIDE
 # The Power of Chef
@@ -188,6 +199,7 @@ allowfullscreen>
   * [ruby-statsd](https://github.com/bryanwb/chef-ruby-statsd)
 * Checkout [monigusto](http://www.youtube.com/embed/oHg5SJYRHA0)!
 
+![chef](oc-chef-logo.png)
 
 !SLIDE
 # Questions?
@@ -201,14 +213,12 @@ allowfullscreen>
 *  [Holt-Winters Approach to Exponential Smoothing](http://faculty.wiu.edu/F-Dehkordi/DS-533/Lectures/Moving-average-methods.ppt)
 by F. Dekhordi 
 * [The Visual Display of Quantitative Information](http://www.edwardtufte.com/tufte/books_vdqi) by Edward Tufte
-* [Pal Kristian Hamre's](http://blog.pkhamre.com) excellent blog
+* [Pal Kristian Hamre's](http://blog.pkhamre.com) blog
 * [Jason Dixon](http://obfuscurity.com/) of course
-* My Chef recipes for collectd, statsd, logstash, and jmxtrans
-* Be sure to listen to the [FoodFightShow](http://foodfightshow.org) http://foodfightshow.org
+* Listen to the [FoodFightShow](http://foodfightshow.org) Podcast
    * [Monitoring for n00bs](http://traffic.libsyn.com/foodfight/ffs21_3.mp3)
    * [Monitoringsucks](http://traffic.libsyn.com/foodfight/ffs18_3.mp3)  
 
-<img src="foodfight_banner.png" width="500px" height="210px"></img>
 
 !SLIDE
 # Special Thanks to
@@ -219,6 +229,6 @@ by F. Dekhordi
 * Michael Leinartas
 
 [This presentation](https://github.com/bryanwb/monitoring-measurement-preso)
-is available on github in showoff format, and diagrams done in SVG
+is available on github in showoff format (html,css,etc.), and diagrams done in SVG
 
 Copyright 2012, Bryan W. Berry License: CC-By 3.0

@@ -54,7 +54,9 @@ Counters* different than counters in collectd
 !SLIDE
 # statsd in action 
 
-![statsd](statsd.png)
+<center>
+<img src="statsd.png"></img>
+</center>
 
 !SLIDE
 # Gauges
