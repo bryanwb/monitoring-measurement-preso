@@ -44,13 +44,11 @@ on the [http://data.fao.org](http://data.fao.org) project
 <img src="data_fao_org_arch.jpg"></img>
 </center>
 
-!SLIDE
-# data.fao.org Architecture in Reality
+!SLIDE full-page
 
 <center><img src="spaghetti-bolognese.jpg" height="800px" width="600px" /></center>
 
-<center style="font-size:3em;">systematic monitoring is critical to
-untangling it</center><br />
+<center style="font-size:3em;">The Reality</center><br />
 
 .notes http://dummyatcooking.files.wordpress.com/2007/10/spaghetti-bolognese.jpg
 
