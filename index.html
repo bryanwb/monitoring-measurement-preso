@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Application Monitoring for UN FAO </title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  
+    
+  
+
+  
+    <link rel="stylesheet" href="./file/base.css" type="text/css"/>
+  
+
+  
+    <script type="text/javascript" src="./file/shrink.js"></script>
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content center" ref="intro/slides/1">
+<p><center style="font-size:6em;">
+Measure it, <br/>
+Don't Just Monitor It
+</center>
+<img src="./file/intro/preso-front1.png" width="681" height="364" alt="alt text">
+<br/>
+Devopsdays Italy 2012, Bryan W. Berry</img>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/2">
+<h1>Ohai There</h1>
+
+<ul>
+<li>I work at <a href="http://www.fao.org">UN Food and Agriculture Organization</a>
+on the <a href="http://data.fao.org">http://data.fao.org</a> project</li>
+<li>Creator and co-host of the
+<a href="http://foodfightshow.org">Food Fight podcast</a></li>
+<li>You can reach me at bryan.berry@gmail.com or @bryanwb</li>
+<li>I am a novice at statistics, graphs, and monitoring
+<br/><br/>
+<div style="float:left;">
+<img src="./file/intro/data-fao-org-logo-v8-bigger.png" width="250" height="250"/>  
+<img src="./file/intro/foodfight_banner.png" width="576" height="227" width="250px" height="105px"/>
+</div></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/3">
+<h1>more on data.fao.org</h1>
+
+<p><img src="./file/intro/screenshot01.png" width="680" height="511" height="480px" width="500px"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/4">
+<h1>Overview</h1>
+
+<ul>
+<li>SOA is complicated</li>
+<li>Monitoring Helps</li>
+<li>But What does it all mean?</li>
+<li>Measure it, don't just monitor it</li>
+<li>Presentation matters</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="intro/slides/5">
+<h1>data.fao.org Architecture on Paper</h1>
+
+<p><center>
+<img src="./file/intro/data_fao_org_arch.jpg" width="900" height="601"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="intro/slides/6">
+<p><center><img src="./file/intro/spaghetti-bolognese.jpg" width="750" height="562" height="900px" width="700px"/></center></p>
+
+<p><center style="font-size:3em;">The Reality</center><br/></p>
+
+<p class="notes">http://dummyatcooking.files.wordpress.com/2007/10/spaghetti-bolognese.jpg</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/7">
+<h1>What We use for Monitoring</h1>
+
+<ul>
+<li>Collectd (cpu, disk, network, arbitrary system data)</li>
+<li>JMXtrans to poll JMX data</li>
+<li>Logstash + statsd awesome combination</li>
+<li>Graphite</li>
+<li>Elasticsearch + Kibana</li>
+</ul>
+
+<p>largely based on discussion in <a href="http://foodfightshow.org/2012/07/monitoring-for-n00bs-with-jason-dixon.html">foodfightshow episode 21</a></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/8">
+<h1>Here is what it looks like</h1>
+
+<p><center>
+<img src="./file/intro/full_stack.png" width="823" height="556"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/9">
+<h1>Let There Be Graphs!</h1>
+
+<p><center>
+<img src="./file/intro/moar_graphs.png" width="703" height="398"/>
+</center></p>
+
+<div style="float:left;">
+<img src="./file/intro/yea-fuck-yea.gif" width="350" height="219"/>
+</div>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/10">
+<h1>Do you know What this means?</h1>
+
+<p><img src="./file/intro/request_latency-svg.png" width="1059" height="513"/></p>
+
+<p>Just collecting the data isn't enough</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/slides/11">
+<h1>How fast/slow is the site?</h1>
+
+<ul>
+<li>How many Requests per Second? Per minute?</li>
+<li>Are those thousands of seconds or thousands of milliseconds?</li>
+<li>What is the average request latency?</li>
+<li>Is "average" what we really want to know?</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="intro/slides/12">
+<p><center>
+<img src="./file/intro/confusing_graphs.png" width="735" height="575"/>
+</center></p>
+
+<p class="notes">http://www.buzzlol.com/wp-content/uploads/2012/05/Confused-Dog-Is-Confused.jpg</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/1">
+<h1>Back to Basics, what is a metric?</h1>
+
+<ul>
+<li>a bucket</li>
+<li>a value</li>
+<li>a timestamp, typically the UNIX epoch time
+<br/></li>
+</ul>
+
+<p><center style="font-size:2em;">
+bucket.name  <span style="color:blue;">number</span>  TIMESTAMP</center>
+<br/>
+<br/>
+<center style="font-size:2em;">
+&lt;stat_name&gt; &lt;number&gt; &lt;timestamp&gt; 
+</center>
+<br/></p>
+
+<p><br/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/2">
+<h1>Metric Types for Collectd</h1>
+
+<ul>
+<li>Gauges</li>
+<li>Derive </li>
+<li>Counters</li>
+<li>Absolute</li>
+</ul>
+
+<p>Gauges are the most commonly used metric type</p>
+
+<p><img src="./file/basics/counters.png" width="504" height="451" alt="counters"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/3">
+<h1>Metric Types for Statsd</h1>
+
+<ul>
+<li>Gauges</li>
+<li>Counters*</li>
+<li>Timers
+<br/><br/>
+Counters* different than counters in collectd</li>
+</ul>
+
+<p><img src="./file/basics/counters.png" width="504" height="451" alt="counters"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/4">
+<h1>Really Basic</h1>
+
+<p><img src="./file/basics/sending_metrics.png" width="877" height="359" alt="basic transport"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/5">
+<h1>collectd in action</h1>
+
+<p><img src="./file/basics/collectd-monitoring.png" width="831" height="571" alt="collectd"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/6">
+<h1>statsd in action</h1>
+
+<p><center>
+<img src="./file/basics/statsd.png" width="733" height="511"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/7">
+<h1>Gauges</h1>
+
+<p><center style="font-size:4em;">
+A gauge simply indicates <br/>
+an arbitrary value at a point <br/>
+in time and is the <br/>
+simplest type in StatsD and collectd
+</center></p>
+
+<p><img src="./file/basics/DigitaLink_Tachometer.png" width="250" height="353" height="140px" width="200px"/></p>
+
+<p class="notes">http://blog.pkhamre.com/2012/07/24/understanding-statsd-and-graphite/</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/8">
+<h1>Derive metric type (collectd only)</h1>
+
+<ul>
+<li>Computes the delta of an underlying counter for a period of time</li>
+<li>Very useful for measuring network traffic</li>
+</ul>
+
+<p><center style="font-size:3em;">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ value = <mfrac>
+     <mrow>
+         <msub><mi>value</mi><mn>new</mn></msub>
+             <mo>-</mo>
+         <msub><mi>value</mi><mn>old</mn></msub>
+     </mrow>
+     <mrow>
+         <msub><mi>time</mi><mn>new</mn></msub>
+             <mo>-</mo>
+         <msub><mi>time</mi><mn>old</mn></msub>
+     </mrow>
+ </mfrac>
+</math>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/9">
+<h1>Counters (statsd)</h1>
+
+<ul>
+<li>A counter adds a value to a bucket and stays in memory until the
+flush interval</li>
+<li>it sends two numbers for each bucket, a total count for the flush
+interval and a value per second</li>
+</ul>
+
+<p><img src="./file/basics/counter.png" width="300" height="264" alt="counter"/>
+
+<p class="notes">http://blog.pkhamre.com/2012/07/24/understanding-statsd-and-graphite/</p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/10">
+<h1>Statsd Timers</h1>
+
+<ul>
+<li>Collect series of values
+
+<ul>
+<li>raw count</li>
+<li>lower - minimum value for flush interval</li>
+<li>mean</li>
+<li>upper - maximum value for flush interval</li>
+<li>90th percentile, value at 90th percentile</li>
+</ul></li>
+</ul>
+
+<p><img src="./file/basics/timer.png" width="250" height="250" alt="timer"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/11">
+<h1>Let's take a look that JVM</h1>
+
+<p><img src="./file/basics/jmxtrans.png" width="938" height="571" alt="jmxtrans"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/12">
+<h1>JMXtrans</h1>
+
+<ul>
+<li>JMXTrans polls each JVM each 60 seconds, by default</li>
+<li>As far as I can tell, values returned from a JMX query are Gauges</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/13">
+<h1>Let's look at that graph again</h1>
+
+<p><img src="./file/basics/request_latency.png" width="1059" height="513"/></p>
+
+<p>That's horrible!</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/14">
+<h1>Averages are Nasty, MEAN things</h1>
+
+<ul>
+<li>Let's look at that 90th Percentile</li>
+</ul>
+
+<p><img src="./file/basics/request_90th.png" width="1059" height="513"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/15">
+<h1>Let's remove the 90th Percentile</h1>
+
+<p><img src="./file/basics/filtered_mean-svg.png" width="1059" height="513"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/16">
+<h1>learn it Love it</h1>
+
+<ul>
+<li>removeAbovePercentile, along with other filtering functions, is
+freaking awesome</li>
+<li>other filtering functions
+
+<ul>
+<li>removeAboveValue</li>
+<li>removeBelowPercentile</li>
+<li>removeBelowValue</li>
+<li>mostDeviant</li>
+</ul></li>
+</ul>
+
+<p>The average isn't all it's cracked up to be</p>
+
+<ul>
+<li>These functions are broken in Graphite 0.9.10 but fixed in master</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/17">
+<h1>Show me the worst!</h1>
+
+<p><img src="./file/basics/most_deviant.png" width="1059" height="513"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/slides/18">
+<h1>Measure it</h1>
+
+<ul>
+<li>Know your data</li>
+<li>Filter out distorting data</li>
+<li>Smooth the Savage Graph to reveal trends</li>
+<li>Maximize the power of Graphite</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/1">
+<h1>I see spikes, but no trend</h1>
+
+<p><img src="./file/operations/hit_count_spikes.png" width="1059" height="513" alt="spikes"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/2">
+<h1>Smoothing</h1>
+
+<p>Massage the Numbers to reveal the trend and to make useful forecasts</p>
+
+<ul>
+<li>Moving Average</li>
+<li>Moving Weighted Averages</li>
+<li>Holt-Winters</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/3">
+<h1>Let's Move that Average</h1>
+
+<p><img src="./file/operations/hit_count_moving_average.png" width="1059" height="513" alt="moving average"/>
+
+<p><center style="font-size:3em;">
+erm, a little better
+</center></p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/4">
+<h1>Show me the Math!</h1>
+
+<p><center style="font-size:3em;">
+For value M at time t and N number of points, calculate the average
+based on the last 10 points <br/><br/>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub>M<mn>t</mn></msub> =
+[ <msub>X<mn>t</mn></msub> + <msub>X<mn>t-1</mn></msub> + ... + <msub>X<mn>t-N+1</mn></msub>] / N
+</math></center>
+
+<p><br/>
+<br/>
+</p></p>
+
+<p><center style="font-size:3em;">
+Moving Averages are OK at reflecting trend, <br/> but  have no notion of
+<em>seasonality</em>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/5">
+<h1>Got Seasonality?</h1>
+
+<p><img src="./file/operations/graph-sum.png" width="950" height="500" alt="more hw"/>
+
+<p class="notes">http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/</p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/6">
+<h1>Holt-Winters forecast</h1>
+
+<p>Let's Factor in:</p>
+
+<ul>
+<li>How smooth do we want the data to be, i.e. not spiky</li>
+<li>Trend</li>
+<li>Seasonality</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/7">
+<h1>Now with Seasoning!</h1>
+
+<p><img src="./file/operations/graph-holtWintersAverage.png" width="950" height="500" alt="more hw">
+<br/>
+Graph credit: Pal Kristian Hamre</img>
+
+<p class="notes">http://blog.pkhamre.com/2012/07/05/visualizing-logdata-with-logstash-statsd-and-graphite/</p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/8">
+<h1>Show me the Math!</h1>
+
+<p><center>
+<img src="./file/operations/holt-winters-bigger.png" width="700" height="366"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content full-page" ref="operations/slides/9">
+<p><center>
+<img src="./file/operations/the-scream-bigger.jpg" width="700" height="893"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/10">
+<h1>Idiot's guide to Holt Winters</h1>
+
+<ul>
+<li>4 Equations
+
+<ul>
+<li>Overrall Smoothing</li>
+<li>Trend Smoothing</li>
+<li>Seasonal Smoothing</li>
+<li>Actual Forecast</li>
+</ul></li>
+<li>3 Constants
+
+<ul>
+<li>&#x3B1; - overrall</li>
+<li>&#x3B2; - Trend</li>
+<li>&#x3B3; - Seasonality</li>
+</ul></li>
+</ul>
+
+<p class="notes">http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc435.htm</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/11">
+<h1>Confidence Bands</h1>
+
+<p><img src="./file/operations/basic.png" width="800" height="500" alt="confidence bands">
+<br/>
+Graph credit: R.I. Pienaar</img>
+
+<p class="notes">https://github.com/ripienaar/graphite-graph-dsl/wiki/Creating-Holt-Winters-Forecasts</p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/12">
+<h1>Aberration</h1>
+
+<p><img src="./file/operations/basic-with-aberration-on-y.png" width="800" height="500" alt="aberration">
+<br/>
+Graph credit: R.I. Pienaar</img>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/13">
+<h1>Great potential in Holt-Winters</h1>
+
+<ul>
+<li>Intelligent capacity planning!</li>
+<li>More intelligent alerting</li>
+<li>Problems
+
+<ul>
+<li>Buggy implementation</li>
+<li>Need to null outage data</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/14">
+<h1>Presentation matters</h1>
+
+<ul>
+<li>Maximize Data-ink Ratio</li>
+<li>Maximize data density</li>
+<li>Use <em>words</em> and colors (to a lesser extent) to add context to your graph</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/15">
+<h1>Edward Tufte, Data Visualization Guru</h1>
+
+<p><center>
+<img src="./file/operations/photo_tufte.jpeg" width="460" height="334"/>
+</center></p>
+
+<p><center style="font-size:3em;">
+"Graphics should do more than present the obvious to idiots"
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/16">
+<h1>More wisdom</h1>
+
+<p><center>
+<img src="./file/operations/photo_tufte.jpeg" width="460" height="334"/>
+</center></p>
+
+<p><center style="font-size:3em;">
+"The task of the designer is to give visual access to the subtle and
+the difficult -- that is, the revelation of the complex"
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/17">
+<h1>Maximize Data-ink Ratio</h1>
+
+<p>Drop Unnecessary Grid lines </p>
+
+<p><center>
+<img src="./file/operations/no-grid-lines.png" width="980" height="609"/>
+</center></p>
+
+<p>Ah, much better!</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/18">
+<h1>Colors and Text can Illuminate</h1>
+
+<p><center>
+<img src="./file/operations/db_cpu_usage.png" width="1433" height="584"/>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/19">
+<h1>More Interesting Graphite Functions</h1>
+
+<ul>
+<li>scale</li>
+<li>removeAbovePercentile</li>
+<li>cumulative</li>
+<li>summarize</li>
+<li>hitCount</li>
+<li>. . . <a href="http://graphite.readthedocs.org/en/0.9.10/functions.html">and many more!</a>!</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/20">
+<h1>John Rauser - look at your data</h1>
+
+<p><center>
+<a href="http://www.youtube.com/watch?v=coNDCIMH8bk">
+<img src="./file/operations/john_rauser.png" width="640" height="400"/>
+<br/>
+Keep your logs, ideally in elasticsearch
+</a>
+</center></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/21">
+<h1>The Power of Chef</h1>
+
+<ul>
+<li>I couldn't have put together this stack w/out Chef</li>
+<li>cookbooks online and available
+
+<ul>
+<li><a href="https://github.com/bryanwb/chef-jmxtrans">collectd</a></li>
+<li><a href="https://github.com/bryanwb/chef-graphite">graphite</a></li>
+<li><a href="https://github.com/bryanwb/chef-logstash">logstash</a></li>
+<li><a href="https://github.com/bryanwb/chef-ruby-statsd">ruby-statsd</a></li>
+</ul></li>
+<li>Checkout <a href="http://www.youtube.com/embed/oHg5SJYRHA0">monigusto</a>!</li>
+</ul>
+
+<p><img src="./file/operations/oc-chef-logo.png" width="100" height="79" alt="chef"/>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/22">
+<h1>Further Resources</h1>
+
+<ul>
+<li> <a href="http://graphite.readthedocs.org/en/0.9.10/functions.html">Graphite Functions</a></li>
+<li> <a href="http://faculty.wiu.edu/F-Dehkordi/DS-533/Lectures/Moving-average-methods.ppt">Holt-Winters Approach to Exponential Smoothing</a>
+by F. Dekhordi </li>
+<li><a href="http://www.edwardtufte.com/tufte/books_vdqi">The Visual Display of Quantitative Information</a> by Edward Tufte</li>
+<li><a href="http://blog.pkhamre.com">Pal Kristian Hamre's</a> blog</li>
+<li><a href="http://obfuscurity.com/">Jason Dixon</a> of course</li>
+<li>Listen to the <a href="http://foodfightshow.org">FoodFightShow</a> Podcast
+
+<ul>
+<li><a href="http://traffic.libsyn.com/foodfight/ffs21_3.mp3">Monitoring for n00bs</a></li>
+<li><a href="http://traffic.libsyn.com/foodfight/ffs18_3.mp3">Monitoringsucks</a><br/>
+</li></ul>
+</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="operations/slides/23">
+<h1>Special Thanks to</h1>
+
+<ul>
+<li>Jason Dixon</li>
+<li>Pal Kristian Hamre</li>
+<li>Pete Fritchman</li>
+<li>Michael Leinartas</li>
+</ul>
+
+<p><a href="https://github.com/bryanwb/monitoring-measurement-preso">This presentation</a>
+is available on github in showoff format (html,css,etc.), and diagrams done in SVG</p>
+
+<p>Copyright 2012, Bryan W. Berry License: CC-By 3.0</p>
+</div>
+</div></div>
+<div id="pauseScreen">
+  
+</div>
+
+</body>
+</html>
