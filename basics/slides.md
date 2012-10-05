@@ -148,7 +148,7 @@ That's horrible!
 !SLIDE
 # Let's remove the 90th Percentile
 
-<img src="filtered_mean.png"></img>
+<img src="filtered_mean-svg.png"></img>
 
 !SLIDE
 # learn it Love it

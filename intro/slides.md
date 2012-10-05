@@ -37,7 +37,7 @@ on the [http://data.fao.org](http://data.fao.org) project
 * Measure it, don't just monitor it
 * Presentation matters
 
-!SLIDE
+!SLIDE full-page
 # data.fao.org Architecture on Paper 
 
 <center>
@@ -46,7 +46,7 @@ on the [http://data.fao.org](http://data.fao.org) project
 
 !SLIDE full-page
 
-<center><img src="spaghetti-bolognese.jpg" height="800px" width="600px" /></center>
+<center><img src="spaghetti-bolognese.jpg" height="900px" width="700px" /></center>
 
 <center style="font-size:3em;">The Reality</center><br />
 
@@ -77,13 +77,6 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 </div>
 ![moar graphs](moar_graphs.png)
 
-!SLIDE full-page
-<center>
-<img src="confusing_graphs.png"></img>
-</center>
-
-.notes http://www.buzzlol.com/wp-content/uploads/2012/05/Confused-Dog-Is-Confused.jpg
-
 !SLIDE
 # Do you know What this means?
 
@@ -99,3 +92,10 @@ Just collecting the data isn't enough
 * What is the average request latency?
 * Is "average" what we really want to know?
 
+
+!SLIDE full-page
+<center>
+<img src="confusing_graphs.png"></img>
+</center>
+
+.notes http://www.buzzlol.com/wp-content/uploads/2012/05/Confused-Dog-Is-Confused.jpg

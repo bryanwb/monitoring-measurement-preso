@@ -202,11 +202,6 @@ Keep your logs, ideally in elasticsearch
 ![chef](oc-chef-logo.png)
 
 !SLIDE
-# Questions?
-
-<center style="font-size:4em;">Ask away</center>
-
-!SLIDE
 # Further Resources
 
 *  [Graphite Functions](http://graphite.readthedocs.org/en/0.9.10/functions.html)
