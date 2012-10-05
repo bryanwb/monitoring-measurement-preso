@@ -139,7 +139,7 @@ simplest type in StatsD and collectd
 That's horrible!
 
 !SLIDE
-# Means are Nasty, dirty things
+# Averages are Nasty, MEAN things
 
 * Let's look at that 90th Percentile
 

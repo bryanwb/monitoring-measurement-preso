@@ -72,10 +72,14 @@ largely based on discussion in [foodfightshow episode 21](http://foodfightshow.o
 
 !SLIDE
 # Let There Be Graphs!
+
+<center>
+<img src="moar_graphs.png"></img>
+</center>
+
 <div style="float:left;">
-<img src="185px-The_Yes_Guy.png"></img>
+<img src="yea-fuck-yea.gif"></img>
 </div>
-![moar graphs](moar_graphs.png)
 
 !SLIDE
 # Do you know What this means?
