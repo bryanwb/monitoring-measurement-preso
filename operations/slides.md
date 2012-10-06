@@ -119,6 +119,29 @@ Graph credit: R.I. Pienaar
   * Buggy implementation
   * Need to null outage data
 
+!SLIDE full-page
+
+<center>
+<img src="deming-quality.jpeg.jpg"></img>
+<br />
+<div style="font-size:4em;">Deming Matters</div>
+
+</center>
+
+
+
+!SLIDE full-page
+
+<br />
+<center style="font-size:3em">
+<img src="1000px-ControlChart.png"></img>
+<br />
+Deming invented the Control Chart <br />
+100 years ago
+
+</center>
+
+
 !SLIDE
 # Presentation matters
 
@@ -219,6 +242,7 @@ by F. Dekhordi
 # Special Thanks to
 
 * Jason Dixon
+* Chris Davis
 * Pal Kristian Hamre
 * Pete Fritchman
 * Michael Leinartas
